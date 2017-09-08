@@ -11,8 +11,9 @@
     <AssemblyName>ArsenalImageMounterCLISetup</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <MyType>Console</MyType>
-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
-    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -23,7 +24,8 @@
     <OutputPath>bin\Debug\</OutputPath>
     <DocumentationFile>ArsenalImageMounterCLISetup.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
-    <IntermediateOutputPath>C:\Users\Niklas\AppData\Local\Temp\vsEBC4.tmp\Debug\</IntermediateOutputPath>
+    <IntermediateOutputPath>C:\Users\app\AppData\Local\Temp\vs47FE.tmp\Debug\</IntermediateOutputPath>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -34,7 +36,8 @@
     <OutputPath>bin\Release\</OutputPath>
     <DocumentationFile>ArsenalImageMounterCLISetup.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
-    <IntermediateOutputPath>C:\Users\Niklas\AppData\Local\Temp\vsEBC4.tmp\Release\</IntermediateOutputPath>
+    <IntermediateOutputPath>C:\Users\app\AppData\Local\Temp\vs47FE.tmp\Release\</IntermediateOutputPath>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup>
     <OptionExplicit>On</OptionExplicit>
@@ -61,7 +64,8 @@
     <DebugType>full</DebugType>
     <PlatformTarget>x86</PlatformTarget>
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
-    <IntermediateOutputPath>C:\Users\Niklas\AppData\Local\Temp\vsEBC4.tmp\x86\Debug\</IntermediateOutputPath>
+    <IntermediateOutputPath>C:\Users\app\AppData\Local\Temp\vs47FE.tmp\x86\Debug\</IntermediateOutputPath>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
     <DefineTrace>true</DefineTrace>
@@ -72,12 +76,13 @@
     <DebugType>pdbonly</DebugType>
     <PlatformTarget>x86</PlatformTarget>
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
-    <IntermediateOutputPath>C:\Users\Niklas\AppData\Local\Temp\vsEBC4.tmp\x86\Release\</IntermediateOutputPath>
+    <IntermediateOutputPath>C:\Users\app\AppData\Local\Temp\vs47FE.tmp\x86\Release\</IntermediateOutputPath>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Ionic.Zip, Version=1.9.1.8, Culture=neutral, PublicKeyToken=edbe51ad942a3f5c, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Arsenal.ImageMounter\DLL\Ionic.Zip.dll</HintPath>
+      <HintPath>..\packages\Unofficial.Ionic.Zip.1.9.1.8\lib\Ionic.Zip.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Xml" />
@@ -142,6 +147,7 @@
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
     <None Include="App.config" />
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Arsenal.ImageMounter\Arsenal.ImageMounter.vbproj">
@@ -149,10 +155,13 @@
       <Name>Arsenal.ImageMounter</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="Ionic.Zip.xml" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <PropertyGroup>
-    <PostBuildEvent>if "$(ConfigurationName)" == "Release" "C:\Program Files (x86)\Eziriz\.NET Reactor\dotNET_Reactor.Console.exe" -file "$(TargetPath)" -project "$(ProjectDir)reactor.nrproj" -output "C:\Users\olof.OLOFDOM\SkyDrive\Dokument\GitHub\Arsenal-Image-Mounter\DriverSetup\$(TargetFileName)"
-if "$(ConfigurationName)" == "Release" signtool sign /a /v /n "Arsenal Consulting, Inc." /d "Arsenal Image Mounter" /du "http://www.arsenalrecon.com" /ac \\OLOF\Z$\Kod\cert\MSCV-GlobalSign.cer /t "http://timestamp.comodoca.com/authenticode" "C:\Users\olof.OLOFDOM\SkyDrive\Dokument\GitHub\Arsenal-Image-Mounter\DriverSetup\$(TargetFileName)"</PostBuildEvent>
+    <PostBuildEvent>
+    </PostBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
